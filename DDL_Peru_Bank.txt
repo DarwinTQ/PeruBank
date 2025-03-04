@@ -1,0 +1,87 @@
+
+CREATE TABLE Servicio (
+    ID_servicio VARCHAR2(255) PRIMARY KEY,
+    Nombre_servicio VARCHAR2(255)
+);
+
+CREATE TABLE Clientes (
+    ID_cliente VARCHAR2(100) PRIMARY KEY,
+    DNI VARCHAR2(10),
+    Nombres VARCHAR2(100),
+    APaterno VARCHAR2(100),
+    AMaterno VARCHAR2(100),
+    Direccion VARCHAR2(255),
+    Telefono VARCHAR2(20),
+    Email VARCHAR2(255),
+    Fecha_registro DATE
+);
+
+CREATE TABLE Cliente_servicio (
+    Fecha_solicitud DATE,
+    ID_servicio VARCHAR2(255),
+    ID_cliente VARCHAR2(100),
+    FOREIGN KEY(ID_servicio)REFERENCES Servicio(ID_servicio),
+    FOREIGN KEY(ID_cliente)REFERENCES Clientes(ID_cliente)
+);
+
+CREATE TABLE Sucursal (
+    ID_sucursal VARCHAR2(100) PRIMARY KEY,
+    Nombre VARCHAR2(255),
+    Direccion VARCHAR2(255),
+    Telefono VARCHAR2(20)
+);
+
+CREATE TABLE Cuent_ban (
+    ID_cuenta VARCHAR2(100) PRIMARY KEY,
+    Numero_cuenta VARCHAR2(255),
+    Saldo NUMBER(10,2),
+    Fecha_Apertura DATE,
+    ID_cliente VARCHAR2(100),
+    ID_sucursal VARCHAR2(100),
+    FOREIGN KEY (ID_cliente) REFERENCES Clientes(ID_cliente),
+    FOREIGN KEY (ID_sucursal) REFERENCES Sucursal(ID_sucursal)
+);
+
+CREATE TABLE Tipo_cuenta (
+    ID_tipo_cuenta VARCHAR2(100) PRIMARY KEY,
+    Nombre VARCHAR2(100),
+    ID_cuenta VARCHAR2(100),
+    FOREIGN KEY (ID_cuenta) REFERENCES Cuent_ban(ID_cuenta)
+);
+
+CREATE TABLE Empleado (
+    ID_empleado VARCHAR2(255) PRIMARY KEY,
+    Fecha_registro DATE,
+    Nombre VARCHAR2(255),
+    Cargo VARCHAR2(255),
+    Fecha_contratacion DATE,
+    ID_sucursal VARCHAR2(100),
+    FOREIGN KEY (ID_sucursal) REFERENCES Sucursal(ID_sucursal)
+);
+
+CREATE TABLE Trans_financ (
+    ID_transaccion VARCHAR2(100) PRIMARY KEY,
+    Tipo VARCHAR2(100),
+    Monto NUMBER(10,2),
+    Fecha DATE,
+    ID_cuenta VARCHAR2(100),
+    ID_empleado VARCHAR2(255),
+    FOREIGN KEY (ID_cuenta) REFERENCES Cuent_ban(ID_cuenta),
+    FOREIGN KEY (ID_empleado) REFERENCES Empleado(ID_empleado)
+);
+
+CREATE TABLE Historial_laboral (
+    ID_historial VARCHAR2(100) PRIMARY KEY,
+    Fecha_inicio DATE,
+    Cargo VARCHAR2(100),
+    ID_empleado VARCHAR2(255),
+    FOREIGN KEY (ID_empleado) REFERENCES Empleado(ID_empleado)
+);
+
+CREATE TABLE Reportes (
+    ID_reporte VARCHAR2(255) PRIMARY KEY,
+    Tipo VARCHAR2(255),
+    Fecha_generacion DATE,
+    ID_empleado VARCHAR2(255),
+    FOREIGN KEY (ID_empleado) REFERENCES Empleado(ID_empleado)
+);
