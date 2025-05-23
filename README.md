@@ -19,12 +19,16 @@ El desarrollo del sistema se organiza en las siguientes fases:
 📌 **Creación del diagrama en Microsoft Visio:**
    - Representación de flujos de datos y procesos bancarios.
    - Identificación de entidades clave: Cliente, Cuenta, Transacción, Producto Financiero, etc.
+   - ![Diagrama de Clases](/Peru_Bank_D_C.png)
+   - ![Diagrama de Clases](/Peru_Bank_D_P.png)
 
 📌 **Diseño del modelo Entidad-Relación en Oracle Data Modeler:**
    - Definición de relaciones entre entidades.
    - Optimización del almacenamiento de datos históricos.
    - Diagrama Logico
    - ![Diagrama Logico](/Diagrama_Logico.png)
+   - Diagrama Relacional
+   - ![Diagrama Relacional](/Diagrama_Relacional.png)
 
 📌 **Transformación del modelo ER en un modelo relacional en Oracle SQL Developer:**
    - Creación de tablas, claves primarias y foráneas.
