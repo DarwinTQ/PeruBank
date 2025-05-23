@@ -23,6 +23,8 @@ El desarrollo del sistema se organiza en las siguientes fases:
 📌 **Diseño del modelo Entidad-Relación en Oracle Data Modeler:**
    - Definición de relaciones entre entidades.
    - Optimización del almacenamiento de datos históricos.
+   - Diagrama Logico
+   - ![Diagrama Logico](/Diagrama_Logico.png)
 
 📌 **Transformación del modelo ER en un modelo relacional en Oracle SQL Developer:**
    - Creación de tablas, claves primarias y foráneas.
