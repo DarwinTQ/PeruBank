@@ -1,4 +1,5 @@
 # PERU_BANK - Sistema de Gestión Bancaria
+- ![PeruBank](/peruBank.png)
 
 ## Descripción
 Para solucionar los problemas de lentitud, falta de integración y baja eficiencia en la gestión de datos bancarios, este proyecto propone el desarrollo de un sistema moderno basado en una base de datos relacional en Oracle y una aplicación de escritorio en Java SE.
