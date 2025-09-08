@@ -49,8 +49,11 @@ El desarrollo del sistema se organiza en las siguientes fases:
 ### 3. Desarrollo de Funcionalidades Clave
 📌 **Operaciones CRUD:**
    - Gestión de clientes, cuentas y productos financieros.
+   - ![PeruBank](/peruBank_registro.png)
    - Registro y consulta de transacciones bancarias.
+   - ![PeruBank](/peruBank_retiro.png)
    - Generación de reportes históricos.
+   - ![PeruBank](/peruBank_reporte.png)
 
 📌 **Optimización y Seguridad:**
    - Uso de procedimientos almacenados y transacciones para mejorar el rendimiento.
